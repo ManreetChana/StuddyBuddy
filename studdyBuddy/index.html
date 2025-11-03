@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studdy Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Studdy Buddy</h1>
+
+  <!-- Home buttons -->
+  <div id="home">
+    <button id="pomodoro-btn">Pomodoro Timer</button>
+    <button id="countdown-btn">Countdown Timer</button>
+    <button id="todo-btn">To-Do List</button>
+    <button id="tally-btn">Tally Counter</button>
+    <button id="game-btn">Monkey Runner Game</button>
+    <button id="notes-btn">Notes / Journal</button>
+  </div>
+
+  <!-- Pomodoro Timer -->
+  <div id="pomodoro" class="feature-section" style="display:none;">
+    <h2>Pomodoro Timer</h2>
+    <div id="pomodoro-timer">25:00</div>
+    <button id="pomodoro-start">Start</button>
+    <button id="pomodoro-reset">Reset</button>
+    <button class="back-btn">Back to Home</button>
+  </div>
+
+  <!-- Countdown Timer -->
+  <div id="countdown" class="feature-section" style="display:none;">
+    <h2>Countdown Timer</h2>
+    <input type="datetime-local" id="countdown-input" />
+    <div id="countdown-display">Set a date and time</div>
+    <button id="countdown-start">Start Countdown</button>
+    <button id="countdown-reset">Reset</button>
+    <button class="back-btn">Back to Home</button>
+  </div>
+
+  <!-- To-Do List -->
+  <div id="todo" class="feature-section" style="display:none;">
+    <h2>To-Do List</h2>
+    <input type="text" id="todo-input" placeholder="New task" />
+    <button id="todo-add">Add Task</button>
+    <ul id="todo-list"></ul>
+    <button class="back-btn">Back to Home</button>
+  </div>
+
+  <!-- Tally Counter -->
+  <div id="tally" class="feature-section" style="display:none;">
+    <h2>Tally Counter</h2>
+    <div id="tally-display">0</div>
+    <button id="tally-increment">+1</button>
+    <button id="tally-reset">Reset</button>
+    <button class="back-btn">Back to Home</button>
+  </div>
+
+  <!-- Notes / Journal -->
+  <div id="notes" class="feature-section" style="display:none;">
+    <h2>Notes / Journal</h2>
+    <textarea id="notes-textarea" rows="10" cols="40" placeholder="Write something..."></textarea>
+    <br />
+    <button id="notes-save">Save</button>
+    <button id="notes-clear">Clear</button>
+    <button class="back-btn">Back to Home</button>
+  </div>
+
+  <!-- Monkey Runner Game -->
+  <div id="game" class="feature-section" style="display:none;">
+    <h2>Monkey Runner Game</h2>
+    <canvas id="game-canvas" width="600" height="200" style="background:#ffe4ec; border:2px solid #6a2c70;"></canvas>
+    <p>Press SPACE or UP to jump!</p>
+    <button class="back-btn">Back to Home</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
