@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Studdy Buddy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -67,12 +70,23 @@
   </div>
 
   <!-- Monkey Runner Game -->
-  <div id="game" class="feature-section" style="display:none;">
-    <h2>Monkey Runner Game</h2>
-    <canvas id="game-canvas" width="600" height="200" style="background:#ffe4ec; border:2px solid #6a2c70;"></canvas>
-    <p>Press SPACE or UP to jump!</p>
+<div id="game" class="feature-section" style="display:none;">
+  <div class="game-card">
+    <div class="game-header">
+      <h2>🐒 Monkey Runner</h2>
+      <div id="score-display"></div>
+    </div>
+
+    <div class="game-frame">
+      <canvas id="game-canvas" width="500" height="200"></canvas>
+    </div>
+
+    <p class="game-hint">Press SPACE or ↑ to jump</p>
+
     <button class="back-btn">Back to Home</button>
   </div>
+</div>
+
 
   <script src="app.js"></script>
 </body>

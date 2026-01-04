@@ -1,87 +1,155 @@
+/* ===== Global Reset & Fonts ===== */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: 'Times New Roman', Times, serif;
-  background-color: #ffe4ec;
-  color: #6a2c70;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fde2ea, #fceef5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #5a2a5e;
   text-align: center;
-  margin: 40px;
 }
 
+/* ===== Headings ===== */
 h1 {
-  font-size: 3em;
-  margin-bottom: 30px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #b03060;
-  text-shadow: 1px 1px 3px #f7c9d9;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
 }
 
+h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+/* ===== Home Grid ===== */
+#home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  width: min(90%, 700px);
+}
+
+/* ===== Buttons ===== */
 button {
-  background-color: #f9c5d1;
+  background: rgba(255, 255, 255, 0.65);
   border: none;
-  border-radius: 15px;
-  padding: 18px 35px;
-  margin: 15px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #6a2c70;
-  box-shadow: 0 5px 10px rgba(106, 44, 112, 0.3);
+  border-radius: 20px;
+  padding: 1.2rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  user-select: none;
+  color: #6a2c70;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
 }
 
 button:hover {
-  background-color: #f7a1b8;
-  box-shadow: 0 8px 15px rgba(106, 44, 112, 0.5);
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 button:active {
-  transform: translateY(1px);
-  box-shadow: 0 3px 6px rgba(106, 44, 112, 0.2);
+  transform: scale(0.97);
 }
 
-#home {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
+/* ===== Feature Sections ===== */
 .feature-section {
-  max-width: 700px;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem 2.5rem;
+  border-radius: 26px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  width: min(90%, 520px);
+  animation: fadeIn 0.4s ease;
 }
 
-/* Pomodoro Timer styling */
-#pomodoro-timer {
-  font-size: 4em;
-  margin: 20px 0;
-  color: #b03060;
+/* ===== Inputs ===== */
+input, textarea {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin: 0.5rem 0.25rem;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
-/* Countdown Timer display */
+textarea {
+  resize: none;
+}
+
+/* ===== Displays ===== */
+#pomodoro-timer,
+#tally-display,
 #countdown-display {
-  font-size: 2em;
-  margin: 20px 0;
-  color: #b03060;
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 600;
 }
 
-/* Tally counter display */
-#tally-display {
-  font-size: 5em;
-  margin: 30px 0;
-  color: #b03060;
-  user-select: none;
+/* ===== Back Button ===== */
+.back-btn {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #f9c5d1, #f6a6c1);
+  color: #5a2a5e;
+  font-weight: 600;
 }
 
-/* Notes textarea */
-#notes-textarea {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #b03060;
-  resize: vertical;
+/* ===== Game Card ===== */
+.game-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ===== Game Header ===== */
+.game-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #6a2c70;
+  padding-bottom: 0.5rem;
+}
+
+/* ===== Game Frame ===== */
+.game-frame {
+  background: linear-gradient(135deg, #ffeaf1, #fcd6e2);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.6),
+              0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== Canvas ===== */
+#game-canvas {
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffeef4, #f9c5d1);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.08);
+}
+
+/* ===== Game Hint ===== */
+.game-hint {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
